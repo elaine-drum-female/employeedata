@@ -13,3 +13,11 @@ header {
 #submit {
     width: 100%;
 }
+
+.header-row {
+    font-weight: bold;
+}
+
+.card {
+    margin-top: 15px;
+}
