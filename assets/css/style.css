@@ -19,5 +19,11 @@ header {
 }
 
 .col-sm-2 {
+
     border-bottom: 1px solid lightgray;
 }
+
+.row:nth-child(even) {
+    background: lightgray;
+  }
+
