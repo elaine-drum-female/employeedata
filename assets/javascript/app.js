@@ -1,3 +1,6 @@
+$(document).ready(() => {
+    refreshRows();
+})
 
 var config = {
     apiKey: "AIzaSyD-UOTfAohaCsTYKynpLJZ_Aq8SiePKVHE",
@@ -11,38 +14,27 @@ firebase.initializeApp(config);
 
 var database = firebase.firestore();
 
-var rowNum = 1;
-$('#submit').on('click', function () {
-    var newRow = $('<div>').addClass('row').attr('id', 'row' + rowNum );
-    var targetRow = $('div');
-    var newColName = $('<div>').addClass('col-2').text($('#inputName.val()'));
-    targetRow.append(newColName);
-    var newColRole = $('<div>').addClass('col-2').text($('#inputRole.val()'));
-    targetRow.append(newColRole);
-    var newColStart = $('<div>').addClass('col-2').text($('#inputStart.val()'));
-    targetRow.append(newColStart);
-    //format date
-    var monthsWorked = ;
-    var newColMonths = $('<div>').addClass('col-2').text(monthsWorked);
-    targetRow.append(newColMonths);
-    var payRate = $('inputRate.val()')
-    var newColRate = $('<div>').addClass('col-2').text(payRate);
-    targetRow.append(newColRate);
-    var newColBilled = $('<div>').addClass('col-2').text(monthsWorked*payRate);
-    targetRow.append(newColBilled);
-    $('.table').append(newRow);
-    rowNum++;
-    });
+$('#submit').click(event => {
+    event.preventDefault();
 
-
-
-$('#submit').click(() => {
-    database.collection('Employees').doc().add({
+    database.collection('Employees').doc().set({
         Name: $('#name').val(),
         Role: $('#role').val(),
         StartDate: $('#start-date').val(),
         PayRate: $('#rate').val()
     })
+
+    refreshRows();
 })
 
-
+function refreshRows() {
+    $('.table-body').html('');
+    let row = 0;
+    database.collection('Employees').get().then(documents => {
+        documents.forEach(doc => {
+            let months = 0;
+            let total = months * doc.data().PayRate;
+            $(`<div class="row" id=${row}>`).append($('<div class="col-sm-2">').text(doc.data().Name), $('<div class="col-sm-2">').text(doc.data().Role), $('<div class="col-sm-2">').text(doc.data().StartDate), $('<div class="col-sm-2">').text(0), $('<div class="col-sm-2">').text(doc.data().PayRate), $('<div class="col-sm-2">').text(total)).appendTo('.table-body');
+        })
+    })
+}
