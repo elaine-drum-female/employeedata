@@ -33,4 +33,4 @@ $('#submit').on('click', function () {
     $('.table').append(newRow);
     rowNum++;
     });
->>>>>>> 30a8e106c5a7405a16f630c893c0b4892cdb00bf
+
