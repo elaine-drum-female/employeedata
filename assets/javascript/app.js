@@ -34,3 +34,15 @@ $('#submit').on('click', function () {
     rowNum++;
     });
 
+
+
+$('#submit').click(() => {
+    database.collection('Employees').doc().add({
+        Name: $('#name').val(),
+        Role: $('#role').val(),
+        StartDate: $('#start-date').val(),
+        PayRate: $('#rate').val()
+    })
+})
+
+
