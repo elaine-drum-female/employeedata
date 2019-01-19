@@ -10,3 +10,11 @@ firebase.initializeApp(config);
 
 var database = firebase.firestore();
 
+$('#submit').click(() => {
+    database.collection('Employees').doc().add({
+        Name: $('#name').val(),
+        Role: $('#role').val(),
+        StartDate: $('#start-date').val(),
+        PayRate: $('#rate').val()
+    })
+})
