@@ -21,3 +21,7 @@ header {
 .col-sm-2 {
     border-bottom: 1px solid slategray;
 }
+
+.row:nth-child(even) {
+    background: lightgray;
+  }
