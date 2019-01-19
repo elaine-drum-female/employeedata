@@ -12,23 +12,13 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="container">
-            
-            <div class="jumbotron">
-                <h1 class="display-4">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-              </div>
-            
-        </div> <!--container-->
-      </div><!--container-fluid-->
-       
-      <div class="container">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Current Employees</label>
+    <div class="container">
+        <div class="jumbotron-fluid">
+            <header>
+                <h1>Employee Data Management</h1>
+                <h3 class="text-muted">A Comprehensive Directory of Employee Billable Hours</h3>
+            </header>
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -67,44 +57,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Add Employee</label>
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Employee Name</label>
-                  <input type="email" class="form-control" id="employeeName" aria-describedby="emailHelp" placeholder="Enter name">
-                  <small id="emailHelp" class="form-text text-muted"</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Role</label>
-                    <input type="text" class="form-control" id="roleCEO" aria-describedby="roleHelp" placeholder="Enter name">
-                    <small id="emailHelp" class="form-text text-muted"</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Start Date (MM/DD/YYYY)</label>
-                    <input type="text" class="form-control" id="startEndDate" aria-describedby="dateHelp" placeholder="Enter date">
-                    <small id="emailHelp" class="form-text text-muted"</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Monthly Rate </label>
-                    <input type="text" class="form-control" id="rate" aria-describedby="rateHelp" placeholder="Enter monthly rate">
-                    <small id="emailHelp" class="form-text text-muted"</small>
-                  </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-        </div>
-        <!--container-->
-
-      
-        <!--container-fluid-->
-    <div class="container">
-        <div class="jumbotron-fluid">
-            <header>
-                <h1>Employee Data Management</h1>
-                <h3 class="text-muted">A Comprehensive Directory of Employee Billable Hours</h3>
-            </header>
             <div class="card">
                 <div class="card-header bg-light">Current Employees</div>
                 <div class="card-body">
@@ -119,15 +71,15 @@
                         <input type="text" class="form-control" id="name" placeholder="John Doe">
                     </div>
                     <div class="form-group">
-                        <label for="role">Password</label>
+                        <label for="role">Role</label>
                         <input type="text" class="form-control" id="role" placeholder="CEO">
                     </div>
                     <div class="form-group">
-                        <label for="start-date">Password</label>
+                        <label for="start-date">Start and End Date</label>
                         <input type="date" class="form-control" id="start-date" placeholder="01/01/1970">
                     </div>
                     <div class="form-group">
-                        <label for="rate">Password</label>
+                        <label for="rate">Monthly Rate</label>
                         <input type="number" class="form-control" id="rate" placeholder="2500">
                     </div>
                     <button id="submit" type="submit" class="btn btn-primary">Submit</button>
