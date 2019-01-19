@@ -1,0 +1,15 @@
+header {
+    background: rgb(34, 34, 34);
+    color: whitesmoke;
+    text-align: center;
+    padding: 75px 0px;
+    margin-bottom: 25px;
+}
+
+.input-form {
+    margin: 15px;
+}
+
+#submit {
+    width: 100%;
+}
