@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 var config = {
     apiKey: "AIzaSyD-UOTfAohaCsTYKynpLJZ_Aq8SiePKVHE",
     authDomain: "bev-employeedata.firebaseapp.com",
@@ -10,7 +10,8 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.firestore();
-=======
+
+
 var rowNum = 1;
 $('#submit').on('click', function () {
     var newRow = $('<div>').addClass('row').attr('id', 'row' + rowNum );
@@ -33,4 +34,4 @@ $('#submit').on('click', function () {
     $('.table').append(newRow);
     rowNum++;
     });
->>>>>>> 30a8e106c5a7405a16f630c893c0b4892cdb00bf
+
